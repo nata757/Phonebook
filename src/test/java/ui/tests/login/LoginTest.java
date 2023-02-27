@@ -20,6 +20,7 @@ public class LoginTest extends TestBase {
 
     @Test
     public void loginTest() {
+        logger.info("Test Data:\nlogin -" + email + "\npassword - " + password);
         loginPage = new LoginPage(driver);
         loginPage.getAuth(email, password);
         menu = new MenuElement(driver);
@@ -29,6 +30,7 @@ public class LoginTest extends TestBase {
 
     @Test
     public void loginWithWrongLoginAndPassword() {
+        logger.info("Test Data:\nlogin -" + wrongEmail+ "\npassword - " + wrongPassword);
         loginPage = new LoginPage(driver);
         loginPage.getAuth(wrongEmail, wrongPassword);
 
