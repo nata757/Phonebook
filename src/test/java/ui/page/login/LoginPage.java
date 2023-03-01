@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import ui.tests.TestBase;
 
 public class LoginPage {
     WebDriver driver;
@@ -26,7 +25,7 @@ public class LoginPage {
     @FindBy(xpath = "//div[@id=\"error-message\"]")
     private WebElement errorLoginPasswordMessage;
 
-    public void getAuth(String email, String password) {
+    public void getLogin(String email, String password) {
         emailInput.clear();
         emailInput.sendKeys(email);
         passwordInput.clear();
