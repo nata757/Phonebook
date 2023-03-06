@@ -22,7 +22,7 @@ public class LoginTest extends TestBase {
     public void loginTest() {
         logger.info("Test Data:\nlogin -" + email + "\npassword - " + password);
         loginPage = new LoginPage(driver);
-        loginPage.getLogin(email, password);
+        loginPage.getLogin(email, "password");
         menu = new MenuEl(driver);
 
         Assert.assertTrue(menu.isAddNewContactMenuLinkDisplayed(), "The main page did not load");
