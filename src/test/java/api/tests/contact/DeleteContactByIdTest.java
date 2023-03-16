@@ -1,7 +1,7 @@
 package api.tests.contact;
 
 import api.EndPoint;
-import api.model.contact.ContactDto;
+import api.model.ContactDto;
 import api.tests.ApiBase;
 import io.restassured.response.Response;
 import org.testng.annotations.BeforeMethod;

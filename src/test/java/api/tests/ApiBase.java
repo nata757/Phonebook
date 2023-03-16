@@ -50,10 +50,45 @@ public Response doDeleteRequest(int id, EndPoint endPoint, int statusCode) {
                 .extract().response();
 
     }
+    public Response doGetRequestWithParam(int id, EndPoint endPoint, int statusCode){
+        return RestAssured.given()
+                .spec(spec)
+                .when()
+                .pathParam("id", id)
+                .log().all()
+                .get(endPoint.getValue())
+                .then()
+                .statusCode(statusCode)
+                .log().all()
+                .extract().response();
+
+    }
+    public Response doGetRequest(EndPoint endPoint, int statusCode){
+        return RestAssured.given()
+                .spec(spec)
+                .when()
+                .log().all()
+                .get(endPoint.getValue())
+                .then()
+                .statusCode(statusCode)
+                .log().all()
+                .extract().response();
+    }
+    public Response doPutRequest(Object body, EndPoint endPoint, int statusCode){
+        return RestAssured.given()
+                .spec(spec)
+                .body(body)
+                .when()
+                .log().all()
+                .put(endPoint.getValue())
+                .then()
+                .statusCode(statusCode)
+                .log().all()
+                .extract().response();
+    }
+
     public int getWrongId(){
         Random rnd =new Random();
         return 100000 + rnd.nextInt(900000);
     }
-
-
 }

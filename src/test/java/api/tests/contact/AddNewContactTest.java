@@ -1,7 +1,7 @@
 package api.tests.contact;
 
 import api.EndPoint;
-import api.model.contact.ContactDto;
+import api.model.ContactDto;
 import api.tests.ApiBase;
 import io.restassured.response.Response;
 import org.testng.Assert;
@@ -32,5 +32,6 @@ public void afterTest(){
        Assert.assertEquals(response.jsonPath().getString("description"),contactDto.getDescription());
 
    }
+
 
 }
